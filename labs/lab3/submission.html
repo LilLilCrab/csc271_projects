@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "UTF-8" />
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+    <title>Submit a Recipe</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: rgb(135, 166, 74);
+            text-align: center;
+        }
+    </style>
+  </head>
+
+  <body>
+    <h1>Submit a New Recipe</h1>
+    <hr>
+
+    <form action = "index.html" method = "get">
+        <p>
+            <label for = "recipe-name">Recipe Name:</label><br>
+            <input type="text" id="recipe-name" name="recipe-name" placeholder="Enter recipe name" />
+        </p>
+
+        <br>
+
+        <p>
+            <label for = "ingredients-instructions">Ingredients & Instructions:</label><br>
+            <textarea id = "ingredients-instructions" name = "ingredients-instructions" rows = "8" cols = "50" placeholder = "List ingredients and step-by-step instructions"></textarea>
+        </p>
+
+        <br>
+
+        <p>
+            <label>Difficulty Level:</label><br>
+            <input type = "radio" id = "easy" name = "difficulty" value = "Easy" />
+            <label for = "easy">Easy</label><br>
+            <input type = "radio" id = "medium" name = "difficulty" value = "Medium" />
+            <label for = "medium">Medium</label><br>
+            <input type = "radio" id = "hard" name = "difficulty" value = "Hard" />
+            <label for = "hard">Hard</label>
+        </p>
+        
+        <br>
+
+        <p>
+            <label>Dietary Preferences:</label><br>
+            <input type = "checkbox" id = "vegetarian" name = "dietary" value = "Vegetarian" />
+            <label for = "vegetarian">Vegetarian</label><br>
+            <input type = "checkbox" id = "vegan" name = "dietary" value = "Vegan" />
+            <label for = "vegan">Vegan</label><br>
+            <input type = "checkbox" id = "gluten-free" name = "dietary" value = "Gluten-Free" />
+            <label for = "gluten-free">Gluten-Free</label><br>
+            <input type = "checkbox" id = "dairy-free" name = "dietary" value = "Dairy-Free" />
+            <label for = "dairy-free">Dairy-Free</label>
+        </p>
+
+        <br>
+
+        <button type = "submit">Submit Recipe</button>
+    </form>
+
+    <br><br>
+
+    <hr>
+    <a href = "index.html">Back to Home</a>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+placeholder.txt allows us to create a new images direcrory.

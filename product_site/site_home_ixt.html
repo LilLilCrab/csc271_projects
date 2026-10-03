@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>TechTrade Guided Search</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            background-color: #abcda6;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        select, input {
+            width: 300px;
+            padding: 12px;
+            border: 1px solid #333;
+            border-radius: 0;
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            font-size: 16px;
+            text-align: center;
+            margin: 5px;
+        }
+
+        button {
+            width: 180px;
+            height: 45px;
+            border: 1px solid #333;
+            border-radius: 0;
+            background-color: #2f4f2f;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+        }
+
+        img {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        Name: Benjii Costa
+        Date: October 3, 2026
+        Description: Guided search page for TechTrade that allows users to
+        select device information and view a mock quote summary.
+
+        AI-assisted suggestion: Used AI to help create the guided search
+        structure, form interaction, and mock results table. The page was
+        adjusted to match the existing TechTrade site and course requirements.
+    -->
+
+    <header>
+        <h1>
+            <a href = "https://benjiicosta.rhody.dev/csc271_projects/site_components/site_home.html">
+                <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo" style = "width: 150px; height: auto;">
+            </a>
+        </h1>
+        <hr>
+    </header>
+
+    <main>
+        <section id = "guided-search">
+            <h2>TechTrade Guided Search</h2>
+            <p>Tell us a little more about your device to get started!</p>
+
+            <form id = "guided-search-form">
+                <label for = "device_make">Device Make:</label>
+                <br>
+                <select name = "device_make" id = "device_make" required>
+                    <option value = "">Select a make</option>
+                    <option value = "Apple">Apple</option>
+                    <option value = "Samsung">Samsung</option>
+                    <option value = "Google">Google</option>
+                    <option value = "Microsoft">Microsoft</option>
+                    <option value = "Other">Other</option>
+                </select>
+                <br>
+
+                <label for = "device_model">Device Model:</label>
+                <br>
+                <select name = "device_model" id = "device_model" required>
+                    <option value = "">Select a model</option>
+                    <option value = "iPhone">iPhone</option>
+                    <option value = "Galaxy">Galaxy</option>
+                    <option value = "Pixel">Pixel</option>
+                    <option value = "Surface">Surface</option>
+                    <option value = "Other">Other</option>
+                </select>
+                <br>
+
+                <label for = "storage_configuration">Storage Configuration:</label>
+                <br>
+                <select name = "storage_configuration" id = "storage_configuration" required>
+                    <option value = "">Select storage</option>
+                    <option value = "64 GB">64 GB</option>
+                    <option value = "128 GB">128 GB</option>
+                    <option value = "256 GB">256 GB</option>
+                    <option value = "512 GB">512 GB</option>
+                    <option value = "1 TB">1 TB</option>
+                </select>
+                <br>
+
+                <label for = "physical_condition">Physical Condition:</label>
+                <br>
+                <select name = "physical_condition" id = "physical_condition" required>
+                    <option value = "">Select condition</option>
+                    <option value = "Like New">Like New</option>
+                    <option value = "Good">Good</option>
+                    <option value = "Fair">Fair</option>
+                    <option value = "Poor">Poor</option>
+                </select>
+                <br>
+
+                <label for = "mock_search">Search:</label>
+                <br>
+                <input
+                    type = "text"
+                    name = "mock_search"
+                    id = "mock_search"
+                    placeholder = "search for another device"
+                >
+                <br>
+
+                <button type = "submit">View My Selection</button>
+            </form>
+        </section>
+
+        <section id = "device-images">
+            <h2>Example Devices</h2>
+            <div style = "display: flex; justify-content: center; gap: 20px;">
+                <figure>
+                    <img src = "images/iphone17_promax.png" alt = "Example smartphone for TechTrade" width = "200" height = "200">
+                    <figcaption>iPhone 17 Pro Max</figcaption>
+                </figure>
+                <figure>
+                    <img src = "images/s26_ultra.webp" alt = "Example laptop for TechTrade" width = "200" height = "200">
+                    <figcaption>Galaxy S26 Ultra</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id = "selection-results">
+            <h2>Your Selection</h2>
+
+            <table id = "selection-table" style = "display: none;">
+                <caption>TechTrade Search Results</caption>
+                <tr>
+                    <th>Device Make</th>
+                    <th>Device Model</th>
+                    <th>Storage</th>
+                    <th>Condition</th>
+                    <th>Search</th>
+                </tr>
+                <tr>
+                    <td id = "result-make"></td>
+                    <td id = "result-model"></td>
+                    <td id = "result-storage"></td>
+                    <td id = "result-condition"></td>
+                    <td id = "result-search"></td>
+                </tr>
+            </table>
+        </section>
+
+        <section id = "product-video">
+            <h2>See How TechTrade Works</h2>
+            <p>This video is included as a mock demonstration of the product experience.</p>
+            <iframe
+                width = "560"
+                height = "315"
+                src = "https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title = "TechTrade product demonstration video"
+                allowfullscreen>
+            </iframe>
+        </section>
+    </main>
+
+    <footer style = "text-align: center;">
+        <br>
+        <br>
+        <p>Help us improve our website by providing your feedback!</p>
+        <nav>
+            <ul style = "text-align: center;">
+                <li><a href = "site_home.html">Home</a></li>
+                <li><a href = "site_home_ixt.html">Guided Search</a></li>
+                <li><a href = "https://github.com/LilLilCrab/csc271_projects/blob/main/product_site/documentation/costa_design.pdf">About Us</a></li>
+                <li><a href = "contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2024 TechTrade. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("guided-search-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("result-make").textContent =
+                document.getElementById("device_make").value;
+
+            document.getElementById("result-model").textContent =
+                document.getElementById("device_model").value;
+
+            document.getElementById("result-storage").textContent =
+                document.getElementById("storage_configuration").value;
+
+            document.getElementById("result-condition").textContent =
+                document.getElementById("physical_condition").value;
+
+            document.getElementById("result-search").textContent =
+                document.getElementById("mock_search").value || "No additional search";
+
+            document.getElementById("selection-table").style.display = "table";
+        });
+    </script>
+</body>
+</html>
+

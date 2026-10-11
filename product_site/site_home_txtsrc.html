@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>TechTrade Home</title>
+    <link rel = "stylesheet" href = "css/techtrade.css">
+</head>
+
+<body>
+    <!--
+        Name: Benjii Costa
+        Date: October 11, 2026
+        Description: TechTrade home page with a mock device search.
+        AI-assisted suggestion: AI helped connect the text search to the
+        guided search page and add a message for unsupported device names.
+        See the detailed AI documentation link in the project documentation.
+    -->
+
+    <header>
+        <h1>
+            <a href = "site_home.html">
+                <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo">
+            </a>
+            <br>
+            TechTrade
+        </h1>
+        <a class = "button_link" href = "site_home_ixt.html">Guided Search</a>
+        <hr>
+    </header>
+
+    <main>
+        <section id = "get-quote">
+            <h2>Get a quote for your tech needs!</h2>
+            <p>Enter one of our sample devices to continue to the guided search.</p>
+
+            <form id = "quote-search">
+                <input
+                    type = "text"
+                    name = "device"
+                    id = "device"
+                    placeholder = "enter device to get started"
+                    required
+                >
+                <button type = "submit">Get My Quote</button>
+            </form>
+
+            <p id = "search-error" class = "error_message" aria-live = "polite"></p>
+            <p class = "small_note">Sample devices: iPhone 15, Samsung Galaxy Watch 7, MacBook Pro 2021, Samsung Galaxy S9, Google Pixel 11, Samsung Galaxy Book6 Pro.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Help us improve our website by providing your feedback!</p>
+        <nav>
+            <ul>
+                <li><a href = "site_home.html">Home</a></li>
+                <li><a href = "site_home_ixt.html">Guided Search</a></li>
+                <li><a href = "site_recommendation.html">Recommendations</a></li>
+                <li><a href = "https://github.com/LilLilCrab/csc271_projects/blob/main/product_site/documentation/costa_design.pdf">About Us</a></li>
+                <li><a href = "contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2024 TechTrade. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("quote-search").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var device = document.getElementById("device").value.trim().toLowerCase();
+            var sample_devices = [
+                "iphone 15",
+                "samsung galaxy watch 7",
+                "macbook pro 2021",
+                "samsung galaxy s9",
+                "google pixel 11",
+                "samsung galaxy book6 pro"
+            ];
+
+            if (sample_devices.indexOf(device) === -1) {
+                document.getElementById("search-error").textContent =
+                    "Sorry, this demo only supports the six sample devices listed below.";
+            } else {
+                window.location.href = "site_home_ixt.html?device=" + encodeURIComponent(device);
+            }
+        });
+    </script>
+</body>
+</html>

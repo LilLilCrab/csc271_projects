@@ -16,14 +16,21 @@ body {
 }
 
 header {
-    text-align: center;
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
 }
 
 header img {
-    width: 150px;
-    height: auto;
-    margin: 10px;
+    height: 60px;
+    width: auto;
 }
 
 hr {

@@ -4,202 +4,74 @@
     <meta charset = "UTF-8">
     <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
     <title>TechTrade Guided Search</title>
-    <style>
-        body {
-            font-family: 'Times New Roman', Times, serif, sans-serif;
-            background-color: #abcda6;
-        }
-
-        main {
-            text-align: center;
-        }
-
-        select, input {
-            width: 300px;
-            padding: 12px;
-            border: 1px solid #333;
-            border-radius: 0;
-            font-family: 'Times New Roman', Times, serif, sans-serif;
-            font-size: 16px;
-            text-align: center;
-            margin: 5px;
-        }
-
-        button {
-            width: 180px;
-            height: 45px;
-            border: 1px solid #333;
-            border-radius: 0;
-            background-color: #2f4f2f;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 10px;
-        }
-
-        table {
-            margin-left: auto;
-            margin-right: auto;
-            border-collapse: collapse;
-            background-color: white;
-        }
-
-        th, td {
-            border: 1px solid #333;
-            padding: 10px;
-        }
-
-        img {
-            margin: 10px;
-        }
-    </style>
+    <link rel = "stylesheet" href = "techtrade.css">
 </head>
 
 <body>
     <!--
         Name: Benjii Costa
-        Date: October 3, 2026
-        Description: Guided search page for TechTrade that allows users to
-        select device information and view a mock quote summary.
-
-        AI-assisted suggestion: Used AI to help create the guided search
-        structure, form interaction, and mock results table. The page was
-        adjusted to match the existing TechTrade site and course requirements.
+        Date: October 11, 2026
+        Description: Guided search page for the six TechTrade sample devices.
+        AI-assisted suggestion: AI helped connect the selected device and form
+        details to the hard-coded recommendation examples. See project
+        documentation for detailed AI usage notes.
     -->
 
     <header>
         <h1>
-            <a href = "https://benjiicosta.rhody.dev/csc271_projects/site_components/site_home.html">
-                <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo" style = "width: 150px; height: auto;">
+            <a href = "site_home.html">
+                <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo">
             </a>
+            <br>
+            TechTrade Guided Search
         </h1>
         <hr>
     </header>
 
     <main>
         <section id = "guided-search">
-            <h2>TechTrade Guided Search</h2>
-            <p>Tell us a little more about your device to get started!</p>
+            <h2>Tell Us About Your Device</h2>
+            <p>Select one of our sample devices, then enter its condition and purchase date.</p>
 
             <form id = "guided-search-form">
-                <label for = "device_make">Device Make:</label>
-                <br>
-                <select name = "device_make" id = "device_make" required>
-                    <option value = "">Select a make</option>
-                    <option value = "Apple">Apple</option>
-                    <option value = "Samsung">Samsung</option>
-                    <option value = "Google">Google</option>
-                    <option value = "Microsoft">Microsoft</option>
-                    <option value = "Other">Other</option>
-                </select>
-                <br>
-
-                <label for = "device_model">Device Model:</label>
-                <br>
+                <label for = "device_model">Device:</label>
                 <select name = "device_model" id = "device_model" required>
-                    <option value = "">Select a model</option>
-                    <option value = "iPhone">iPhone</option>
-                    <option value = "Galaxy">Galaxy</option>
-                    <option value = "Pixel">Pixel</option>
-                    <option value = "Surface">Surface</option>
-                    <option value = "Other">Other</option>
+                    <option value = "">Select a device</option>
+                    <option value = "iPhone 15">iPhone 15</option>
+                    <option value = "Samsung Galaxy Watch 7">Samsung Galaxy Watch 7</option>
+                    <option value = "MacBook Pro 2021">MacBook Pro 2021</option>
+                    <option value = "Samsung Galaxy S9">Samsung Galaxy S9</option>
+                    <option value = "Google Pixel 11">Google Pixel 11</option>
+                    <option value = "Samsung Galaxy Book6 Pro">Samsung Galaxy Book6 Pro</option>
                 </select>
-                <br>
 
-                <label for = "storage_configuration">Storage Configuration:</label>
-                <br>
-                <select name = "storage_configuration" id = "storage_configuration" required>
-                    <option value = "">Select storage</option>
-                    <option value = "64 GB">64 GB</option>
-                    <option value = "128 GB">128 GB</option>
-                    <option value = "256 GB">256 GB</option>
-                    <option value = "512 GB">512 GB</option>
-                    <option value = "1 TB">1 TB</option>
-                </select>
-                <br>
+                <label for = "date_purchased">Date Purchased:</label>
+                <input type = "date" name = "date_purchased" id = "date_purchased" required>
 
                 <label for = "physical_condition">Physical Condition:</label>
-                <br>
                 <select name = "physical_condition" id = "physical_condition" required>
                     <option value = "">Select condition</option>
-                    <option value = "Like New">Like New</option>
-                    <option value = "Good">Good</option>
-                    <option value = "Fair">Fair</option>
+                    <option value = "Excellent">Excellent</option>
+                    <option value = "Used">Used</option>
                     <option value = "Poor">Poor</option>
+                    <option value = "Broken">Broken</option>
+                    <option value = "Defective">Defective</option>
                 </select>
-                <br>
 
-                <label for = "mock_search">Search:</label>
-                <br>
-                <input
-                    type = "text"
-                    name = "mock_search"
-                    id = "mock_search"
-                    placeholder = "search for another device"
-                >
-                <br>
-
-                <button type = "submit">View My Selection</button>
+                <button type = "submit">Get Recommendation</button>
             </form>
-        </section>
 
-        <section id = "device-images">
-            <h2>Example Devices</h2>
-            <div style = "display: flex; justify-content: center; gap: 20px;">
-                <figure>
-                    <img src = "images/iphone17_promax.png" alt = "Example smartphone for TechTrade" width = "200" height = "200">
-                    <figcaption>iPhone 17 Pro Max</figcaption>
-                </figure>
-                <figure>
-                    <img src = "images/s26_ultra.webp" alt = "Example laptop for TechTrade" width = "200" height = "200">
-                    <figcaption>Galaxy S26 Ultra</figcaption>
-                </figure>
-            </div>
-        </section>
-
-        <section id = "selection-results">
-            <h2>Your Selection</h2>
-
-            <table id = "selection-table" style = "display: none;">
-                <caption>TechTrade Search Results</caption>
-                <tr>
-                    <th>Device Make</th>
-                    <th>Device Model</th>
-                    <th>Storage</th>
-                    <th>Condition</th>
-                    <th>Search</th>
-                </tr>
-                <tr>
-                    <td id = "result-make"></td>
-                    <td id = "result-model"></td>
-                    <td id = "result-storage"></td>
-                    <td id = "result-condition"></td>
-                    <td id = "result-search"></td>
-                </tr>
-            </table>
-        </section>
-
-        <section id = "product-video">
-            <h2>See How TechTrade Works</h2>
-            <p>This video is included as a mock demonstration of the product experience.</p>
-            <iframe
-                width = "560"
-                height = "315"
-                src = "https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title = "TechTrade product demonstration video"
-                allowfullscreen>
-            </iframe>
+            <p id = "guided-error" class = "error_message" aria-live = "polite"></p>
         </section>
     </main>
 
-    <footer style = "text-align: center;">
-        <br>
-        <br>
+    <footer>
         <p>Help us improve our website by providing your feedback!</p>
         <nav>
-            <ul style = "text-align: center;">
+            <ul>
                 <li><a href = "site_home.html">Home</a></li>
                 <li><a href = "site_home_ixt.html">Guided Search</a></li>
+                <li><a href = "site_recommendation.html">Recommendations</a></li>
                 <li><a href = "https://github.com/LilLilCrab/csc271_projects/blob/main/product_site/documentation/costa_design.pdf">About Us</a></li>
                 <li><a href = "contact.html">Contact</a></li>
             </ul>
@@ -208,27 +80,37 @@
     </footer>
 
     <script>
+        var search_parameters = new URLSearchParams(window.location.search);
+        var selected_device = search_parameters.get("device");
+
+        if (selected_device) {
+            var device_options = document.getElementById("device_model").options;
+
+            for (var i = 0; i < device_options.length; i++) {
+                if (device_options[i].value.toLowerCase() === selected_device.toLowerCase()) {
+                    document.getElementById("device_model").selectedIndex = i;
+                }
+            }
+        }
+
         document.getElementById("guided-search-form").addEventListener("submit", function(event) {
             event.preventDefault();
 
-            document.getElementById("result-make").textContent =
-                document.getElementById("device_make").value;
+            var device = document.getElementById("device_model").value;
+            var purchase_date = document.getElementById("date_purchased").value;
+            var condition = document.getElementById("physical_condition").value;
 
-            document.getElementById("result-model").textContent =
-                document.getElementById("device_model").value;
+            if (device === "Google Pixel 11" && condition !== "Defective") {
+                document.getElementById("guided-error").textContent =
+                    "For this sample case, select Defective to see the warranty replacement recommendation.";
+                return;
+            }
 
-            document.getElementById("result-storage").textContent =
-                document.getElementById("storage_configuration").value;
-
-            document.getElementById("result-condition").textContent =
-                document.getElementById("physical_condition").value;
-
-            document.getElementById("result-search").textContent =
-                document.getElementById("mock_search").value || "No additional search";
-
-            document.getElementById("selection-table").style.display = "table";
+            window.location.href = "site_recommendation.html?device=" +
+                encodeURIComponent(device) +
+                "&purchase_date=" + encodeURIComponent(purchase_date) +
+                "&condition=" + encodeURIComponent(condition);
         });
     </script>
 </body>
 </html>
-

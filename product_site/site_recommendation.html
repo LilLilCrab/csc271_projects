@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>TechTrade Recommendation</title>
+    <link rel = "stylesheet" href = "techtrade.css">
+</head>
+
+<body>
+    <!--
+        Name: Benjii Costa
+        Date: October 11, 2026
+        Description: Hard-coded sample recommendation outcomes for TechTrade.
+        AI-assisted suggestion: AI helped organize sample device data,
+        recommendation rules, and shared stylesheet links. Device repair
+        costs are illustrative estimates, not quotes. See project
+        documentation for detailed AI usage notes.
+    -->
+
+    <header>
+        <h1>
+            <a href = "site_home.html">
+                <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo">
+            </a>
+            <br>
+            TechTrade Recommendation
+        </h1>
+        <hr>
+    </header>
+
+    <main>
+        <section id = "recommendation-results">
+            <h2 id = "recommendation-device">Your Device</h2>
+            <p id = "recommendation-intro">Based on the details provided, TechTrade recommends:</p>
+            <h2 id = "recommendation-action" class = "recommendation_action">Upgrade</h2>
+
+            <table>
+                <caption>Device Information</caption>
+                <tr><th>Factor</th><th>Details</th></tr>
+                <tr><td>Condition</td><td id = "result-condition"></td></tr>
+                <tr><td>Date Purchased</td><td id = "result-purchase-date"></td></tr>
+                <tr><td>Device Age</td><td id = "result-age"></td></tr>
+                <tr><td>Original MSRP</td><td id = "result-msrp"></td></tr>
+                <tr><td>Manufacturing / Release Date</td><td id = "result-release"></td></tr>
+                <tr><td>Estimated Support End</td><td id = "result-support"></td></tr>
+                <tr><td>Estimated Repair Cost</td><td id = "result-repair"></td></tr>
+            </table>
+
+            <p id = "recommendation-reason" class = "result_panel"></p>
+            <p class = "small_note">This is a classroom demonstration using hard-coded values and simplified support-life assumptions. Repair costs vary by part, location, warranty, and repair provider. It is not a formal quote.</p>
+            <p><a class = "button_link" href = "site_home.html">Return Home</a>
+            <a class = "button_link" href = "site_home_ixt.html">Try Another Device</a></p>
+        </section>
+
+        <section id = "sample-cases">
+            <h2>Try a Sample Case</h2>
+            <p>Choose one of the test cases to see the corresponding mock recommendation.</p>
+            <p>
+                <a href = "site_recommendation.html?device=iPhone%2015&purchase_date=2024-10-11&condition=Poor">iPhone 15</a> |
+                <a href = "site_recommendation.html?device=Samsung%20Galaxy%20Watch%207&purchase_date=2025-03-25&condition=Used">Galaxy Watch 7</a> |
+                <a href = "site_recommendation.html?device=MacBook%20Pro%202021&purchase_date=2022-01-28&condition=Excellent">MacBook Pro 2021</a> |
+                <a href = "site_recommendation.html?device=Samsung%20Galaxy%20S9&purchase_date=2018-06-16&condition=Used">Galaxy S9</a> |
+                <a href = "site_recommendation.html?device=Google%20Pixel%2011&purchase_date=2026-09-02&condition=Defective">Pixel 11</a> |
+                <a href = "site_recommendation.html?device=Samsung%20Galaxy%20Book6%20Pro&purchase_date=2025-12-07&condition=Broken">Galaxy Book6 Pro</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Help us improve our website by providing your feedback!</p>
+        <nav>
+            <ul>
+                <li><a href = "site_home.html">Home</a></li>
+                <li><a href = "site_home_ixt.html">Guided Search</a></li>
+                <li><a href = "site_recommendation.html">Recommendations</a></li>
+                <li><a href = "https://github.com/LilLilCrab/csc271_projects/blob/main/product_site/documentation/costa_design.pdf">About Us</a></li>
+                <li><a href = "contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2024 TechTrade. All rights reserved.</p>
+    </footer>
+
+    <script>
+        var search_parameters = new URLSearchParams(window.location.search);
+        var device = search_parameters.get("device") || "iPhone 15";
+        var purchase_date = search_parameters.get("purchase_date") || "2024-10-11";
+        var condition = search_parameters.get("condition") || "Poor";
+
+        var device_data = {
+            "iPhone 15": {
+                action: "Upgrade",
+                msrp: "$799 starting MSRP",
+                release: "September 2023",
+                support: "Estimated September 2028 using the requested 5-year Apple assumption; verify current support status",
+                repair: "About $200-$400 for a major out-of-warranty repair (illustrative estimate)",
+                reason: "The device is in poor condition and is approaching the assumed support-life threshold. TechTrade recommends trading it in toward a newer phone rather than spending heavily on repairs."
+            },
+            "Samsung Galaxy Watch 7": {
+                action: "Upgrade",
+                msrp: "$299.99 starting MSRP",
+                release: "July 2024",
+                support: "Estimated July 2031 using the requested 7-year Samsung assumption",
+                repair: "About $100-$180 for a common screen or component repair (illustrative estimate)",
+                reason: "The watch is used and has been owned for over a year. A trade-in toward a newer wearable may be more worthwhile than investing in repairs as the device ages."
+            },
+            "MacBook Pro 2021": {
+                action: "Sell",
+                msrp: "$1,999 starting MSRP for 14-inch; $2,499 for 16-inch",
+                release: "October 2021",
+                support: "Estimated October 2026 using the requested 5-year Apple assumption; actual support varies by model",
+                repair: "About $250-$700 for a major out-of-warranty repair (illustrative estimate)",
+                reason: "The MacBook is in excellent condition and remains useful. Selling it while it is still in good shape could help fund a newer MacBook instead of waiting until its resale value declines."
+            },
+            "Samsung Galaxy S9": {
+                action: "Upgrade",
+                msrp: "$719.99 starting MSRP",
+                release: "March 2018",
+                support: "Software support ended in 2022; Samsung's stated support duration varied by product generation",
+                repair: "About $150-$300 for a screen or battery-related repair (illustrative estimate)",
+                reason: "The Galaxy S9 is beyond its software-support period and is several generations old. Upgrading to a current phone is the safer long-term choice than spending more on this device."
+            },
+            "Google Pixel 11": {
+                action: "Replace",
+                msrp: "$899 starting MSRP",
+                release: "August 2026",
+                support: "Google advertises 7 years of updates for the Pixel 11 family; warranty coverage depends on purchase and defect details",
+                repair: "Warranty replacement assumed at $0 if the defect is covered; otherwise a repair estimate is required",
+                reason: "This sample device is marked defective and was purchased recently. The recommendation is to contact the seller or Google for warranty service or replacement, assuming the defect is covered and the warranty terms apply."
+            },
+            "Samsung Galaxy Book6 Pro": {
+                action: "Repair",
+                msrp: "$1,599.99 starting MSRP",
+                release: "March 2026 US availability",
+                support: "Estimated March 2033 using the requested 7-year Samsung assumption; PC support lifecycle can vary",
+                repair: "About $50-$150 for a trackpad repair if it is a simple part/cable issue (illustrative estimate)",
+                reason: "The laptop is relatively new and the reported trackpad issue may be a limited repair. Repairing it is likely more economical than replacing the whole computer, especially if the fault is isolated."
+            }
+        };
+
+        var selected_data = device_data[device];
+
+        if (!selected_data) {
+            device = "iPhone 15";
+            selected_data = device_data[device];
+        }
+
+        document.getElementById("recommendation-device").textContent = device;
+        document.getElementById("recommendation-action").textContent = selected_data.action;
+        document.getElementById("result-condition").textContent = condition;
+        document.getElementById("result-purchase-date").textContent = purchase_date;
+
+        var purchase_time = new Date(purchase_date + "T00:00:00");
+        var current_time = new Date();
+        var years_owned = current_time.getFullYear() - purchase_time.getFullYear();
+        var months_owned = current_time.getMonth() - purchase_time.getMonth();
+
+        if (current_time.getDate() < purchase_time.getDate()) {
+            months_owned = months_owned - 1;
+        }
+
+        if (months_owned < 0) {
+            years_owned = years_owned - 1;
+            months_owned = months_owned + 12;
+        }
+
+        if (years_owned < 0) {
+            document.getElementById("result-age").textContent = "Purchase date is in the future";
+        } else {
+            document.getElementById("result-age").textContent =
+                years_owned + " years, " + months_owned + " months (calculated " +
+                current_time.toLocaleDateString() + ")";
+        }
+
+        document.getElementById("result-msrp").textContent = selected_data.msrp;
+        document.getElementById("result-release").textContent = selected_data.release;
+        document.getElementById("result-support").textContent = selected_data.support;
+        document.getElementById("result-repair").textContent = selected_data.repair;
+        document.getElementById("recommendation-reason").textContent = selected_data.reason;
+    </script>
+</body>
+</html>

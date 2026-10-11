@@ -1,1 +1,169 @@
+/*
+    Name: Benjii Costa
+    Date: October 11, 2026
+    Description: Shared CSS stylesheet for the TechTrade product website.
+    AI-assisted suggestion: AI helped organize shared styling rules and
+    comments to keep the pages visually consistent. Add the required detailed
+    AI documentation link here when available.
+*/
+
+/* Main page styling */
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background-color: #abcda6;
+    color: #222;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+}
+
+header img {
+    width: 150px;
+    height: auto;
+    margin: 10px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #333;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    color: #2f4f2f;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    color: #222;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+a:link {
+    color: #183d18;
+}
+
+a:visited {
+    color: #4b315e;
+}
+
+a:hover {
+    color: #ffffff;
+    background-color: #2f4f2f;
+}
+
+/* Form controls and buttons */
+input, select {
+    width: 300px;
+    max-width: 90%;
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 0;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+button, .button_link {
+    display: inline-block;
+    width: 180px;
+    min-height: 45px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 0;
+    background-color: #2f4f2f;
+    color: white;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+button:hover, .button_link:hover {
+    background-color: #183d18;
+    color: white;
+}
+
+/* Shared layout and result sections */
+#quote-search, #guided-search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.result_panel, .device_card {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 18px;
+    border: 1px solid #2f4f2f;
+    background-color: #dcebd8;
+}
+
+.recommendation_action {
+    font-size: 42px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 15px;
+}
+
+table {
+    margin: 15px auto;
+    border-collapse: collapse;
+    background-color: white;
+    width: auto;
+    max-width: 95%;
+}
+
+caption {
+    font-weight: bold;
+    padding: 8px;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #dcebd8;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+}
+
+footer ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.error_message {
+    color: #8b0000;
+    font-weight: bold;
+}
+
+.small_note {
+    font-size: 14px;
+}
 

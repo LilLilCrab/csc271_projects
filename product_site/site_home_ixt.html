@@ -13,8 +13,8 @@
         Date: October 11, 2026
         Description: Guided search page for the six TechTrade sample devices.
         AI-assisted suggestion: AI helped connect the selected device and form
-        details to the hard-coded recommendation examples. See project
-        documentation for detailed AI usage notes.
+        details to the hard-coded recommendation examples. Also used with error
+        messaging and site scripts.
     -->
 
     <header>
@@ -79,6 +79,9 @@
         <p>&copy; 2024 TechTrade. All rights reserved.</p>
     </footer>
 
+     <!--
+        AI was used in order to create this script that allows us to create classful elements to the device search fature.
+    -->
     <script>
         var search_parameters = new URLSearchParams(window.location.search);
         var selected_device = search_parameters.get("device");

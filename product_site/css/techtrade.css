@@ -105,6 +105,7 @@ button, .button_link {
 button:hover, .button_link:hover {
     background-color: #183d18;
     color: white;
+    text-align: center;
 }
 
 /* Shared layout and result sections */

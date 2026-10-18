@@ -15,14 +15,17 @@ body {
     margin: 0;
 }
 
-header {
-    justify-content: center;
+.main-header header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
 }
 
-header h1 {
-    display: flex;
-    gap: 188px;
+.main-header h1 {
     margin: 0;
+    text-align: center;
+    font-size: 32px;
 }
 
 header img {
@@ -151,11 +154,9 @@ footer ul {
 
 /* Classes */
 .main-header {
-    overflow: hidden;
     background-color: #3c603ca8;
     padding: 20px;
 }
-
 .main-content {
     float: center;
     width: 1184px;
@@ -175,6 +176,31 @@ footer ul {
     overflow: hidden;
     background-color: #3c603ca8;
     padding: 15px;
+}
+
+.main-header .image-container img {
+    display: block;
+    width: auto;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.main-header .button_link:hover {
+    background-color: #183d18;
+    color: #FFFFFF;
+}
+
+.main-header .button_link {
+    display: inline-block;
+    width: 180px;
+    min-height: 45px;
+    padding: 10px;
+    background-color: #2f4f2f;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #333;
+    box-sizing: border-box;
 }
 
 /* Created assisted by AI */

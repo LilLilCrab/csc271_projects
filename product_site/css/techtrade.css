@@ -159,7 +159,7 @@ footer ul {
 }
 .main-content {
     float: center;
-    width: 1184px;
+    width: auto;
     background-color: #3c603c56;
     padding: 20px;
     overflow: scroll;

@@ -21,8 +21,6 @@ header {
 
 header h1 {
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 188px;
     margin: 0;
 }
@@ -100,6 +98,7 @@ button, .button_link {
     cursor: pointer;
     margin: 10px;
     box-sizing: border-box;
+    float: center;
 }
 
 button:hover, .button_link:hover {
@@ -115,21 +114,6 @@ button:hover, .button_link:hover {
     align-items: center;
     gap: 10px;
     margin-top: 20px;
-}
-
-.result_panel, .device_card {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 18px;
-    border: 1px solid #2f4f2f;
-    background-color: #dcebd8;
-}
-
-.recommendation_action {
-    font-size: 42px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 15px;
 }
 
 table {
@@ -165,6 +149,35 @@ footer ul {
     padding-left: 0;
 }
 
+/* Classes */
+.main-header {
+    overflow: hidden;
+    background-color: #3c603ca8;
+    padding: 15%;
+}
+
+.main-content {
+    float: center;
+    width: 1184px;
+    background-color: #3c603c56;
+    padding: 20px;
+    overflow: scroll;
+}
+
+.image-container {
+    float: center;
+    margin: 15px 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.footer {
+    overflow: hidden;
+    background-color: #3c603ca8;
+    padding: 15px;
+}
+
+/* Created assisted by AI */
 .error_message {
     color: #8b0000;
     font-weight: bold;
@@ -174,3 +187,17 @@ footer ul {
     font-size: 14px;
 }
 
+.result_panel, .device_card {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 18px;
+    border: 1px solid #2f4f2f;
+    background-color: #dcebd8;
+}
+
+.recommendation_action {
+    font-size: 42px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 15px;
+}

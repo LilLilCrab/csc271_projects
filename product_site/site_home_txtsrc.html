@@ -7,6 +7,7 @@
     <link rel = "stylesheet" href = "css/techtrade.css">
     <link rel = "icon" type = "image/png" href = "images/TechTrade_logo_clear.png">
 </head>
+
  <!--
         Name: Benjii Costa
         Date: October 11, 2026
@@ -15,68 +16,76 @@
         guided search page and add a message for unsupported device names.
     -->
 <body>
-    <header>
-        <h1>
-            <a href = "site_home_txtsrc.html">
-                <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo">
-            </a>
+    <div class = "main-header">
+        <header>
+            <h1>
+                <div class = "image-container">
+                    <a href = "site_home_txtsrc.html">
+                        <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo">
+                    </a>
+                </div>
+
+                <br>
+                
+                TechTrade
             
-            <br>
-            
-            TechTrade
-        
-            <a class = "button_link" href = "site_home_ixt.html" style = "color: #FFFFFF">Guided Search</a>
-        </h1>
-        <hr>
-    </header>
+                <a class = "button_link" href = "site_home_ixt.html" style = "color: #FFFFFF">Guided Search</a>
+            </h1>
+            <hr>
+        </header>
+    </div>
 
-    <main>
-        <section id = "get-quote">
-            <h2>Get a quote for your tech needs!</h2>
-            <p>Enter one of our sample devices to continue to the guided search.</p>
+    <div class = "main-content">
+        <main>
+            <section id = "get-quote">
+                <h2>Get a quote for your tech needs!</h2>
+                <p>Enter one of our sample devices to continue to the guided search.</p>
 
-            <form id = "quote-search">
-                <input
-                    type = "text"
-                    name = "device"
-                    id = "device"
-                    placeholder = "enter device to get started"
-                    required
-                >
-                <button type = "submit">Get My Quote</button>
-            </form>
+                <form id = "quote-search">
+                    <input
+                        type = "text"
+                        name = "device"
+                        id = "device"
+                        placeholder = "enter device to get started"
+                        required
+                    >
+                    <button type = "submit">Get My Quote</button>
+                </form>
 
-            <p id = "search-error" class = "error_message" aria-live = "polite"></p>
-            <p class = "small_note">Sample devices: iPhone 15, Samsung Galaxy Watch 7, MacBook Pro 2021, Samsung Galaxy S9, Google Pixel 11, Samsung Galaxy Book6 Pro.</p>
-            <br><br><br>
-        </section>
+                <p id = "search-error" class = "error_message" aria-live = "polite"></p>
+                <p class = "small_note">Sample devices: iPhone 15, Samsung Galaxy Watch 7, MacBook Pro 2021, Samsung Galaxy S9, Google Pixel 11, Samsung Galaxy Book6 Pro.</p>
+                <br><br><br>
+            </section>
 
-        <section id = "bby-trade-in-video">
-           <iframe
-               width="560" 
-               height="315" 
-               src="https://www.youtube.com/embed/sfpZZOEg54c?si=bbTtkiaGjXbFfDqL"
-               title="YouTube video player"
-               frameborder="0"
-               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-               referrerpolicy="strict-origin-when-cross-origin"
-               allowfullscreen>
-            </iframe>
-        </section>
-    </main>
+            <section id = "bby-trade-in-video">
+            <iframe
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/sfpZZOEg54c?si=bbTtkiaGjXbFfDqL"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+                </iframe>
+            </section>
+        </main>
+    </div>
 
-    <footer>
-        <p>Help us improve our website by providing your feedback!</p>
-        <nav>
-            <ul>
-                <li><a href = "site_home_ixt.html">Guided Search</a></li>
-                <li><a href = "site_recommendation.html">Recommendations</a></li>
-                <li><a href = "https://github.com/LilLilCrab/csc271_projects/blob/main/product_site/documentation/costa_design.pdf">About Us</a></li>
-                <li><a href = "contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <p>&copy; 2026 TechTrade. All rights reserved.</p>
-    </footer>
+    <div class = "footer">
+        <footer>
+            <p>Help us improve our website by providing your feedback!</p>
+            <nav>
+                <ul>
+                    <li><a href = "site_home_ixt.html">Guided Search</a></li>
+                    <li><a href = "site_recommendation.html">Recommendations</a></li>
+                    <li><a href = "https://github.com/LilLilCrab/csc271_projects/blob/main/product_site/documentation/costa_design.pdf">About Us</a></li>
+                    <li><a href = "contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 TechTrade. All rights reserved.</p>
+        </footer>
+    </div>
 
     <script>
         document.getElementById("quote-search").addEventListener("submit", function(event) {

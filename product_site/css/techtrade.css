@@ -44,6 +44,12 @@ main {
     padding: 20px;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
 h1, h2, h3 {
     font-family: 'Times New Roman', Times, serif, sans-serif;
     color: #2f4f2f;
@@ -225,4 +231,20 @@ footer ul {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 15px;
+}
+
+@media screen and (max-width: 600px) {
+    /* Makes the header links display as blocks */
+    .main-header a {
+        display: block;
+        float: none;
+        text-align: center;
+    }
+
+    /* Allow the main content to use the full screen width */
+    .main-content {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 18px;
+    }
 }

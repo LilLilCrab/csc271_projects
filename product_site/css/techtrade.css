@@ -17,8 +17,7 @@ body {
 
 .main-header header {
     display: flex;
-    justify-content: right;
-    align-items: center;
+    justify-content: center;
     gap: 12px;
 }
 

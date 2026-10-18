@@ -20,6 +20,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 12px;
+    width: 100%;
 }
 
 .main-header h1 {
@@ -166,8 +167,7 @@ footer ul {
 }
 
 .image-container {
-    float: center;
-    margin: 15px 0;
+    margin: 0;
     max-width: 100%;
     height: auto;
 }

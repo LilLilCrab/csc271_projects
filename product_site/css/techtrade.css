@@ -16,8 +16,8 @@ body {
 }
 
 .main-header header {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 12px;
 }

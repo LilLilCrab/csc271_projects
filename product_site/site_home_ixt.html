@@ -8,8 +8,7 @@
     <link rel = "icon" type = "image/png" href = "images/TechTrade_logo_clear.png">
 </head>
 
-<body>
-    <!--
+<!--
         Name: Benjii Costa
         Date: October 11, 2026
         Description: Guided search page for the six TechTrade sample devices.
@@ -17,89 +16,101 @@
         details to the hard-coded recommendation examples. Also used with error
         messaging and site scripts.
     -->
-
-    <header>
-        <h1>
-            <a href = "site_home_txtsrc.html">
-                <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo">
-            </a>
-            <br>
-            TechTrade Guided Search
-        </h1>
-        <hr>
-    </header>
-
-    <main>
-        <section id = "guided-search">
-            <h2>Tell Us About Your Device</h2>
-            <p>Select one of our sample devices, then enter its condition and purchase date.</p>
-
-            <form id = "guided-search-form">
-                <label for = "device_model">Device:</label>
-                <select name = "device_model" id = "device_model" required>
-                    <option value = "">Select a device</option>
-                    <option value = "iPhone 15">iPhone 15</option>
-                    <option value = "Samsung Galaxy Watch 7">Samsung Galaxy Watch 7</option>
-                    <option value = "MacBook Pro 2021">MacBook Pro 2021</option>
-                    <option value = "Samsung Galaxy S9">Samsung Galaxy S9</option>
-                    <option value = "Google Pixel 11">Google Pixel 11</option>
-                    <option value = "Samsung Galaxy Book6 Pro">Samsung Galaxy Book6 Pro</option>
-                </select>
-
-                <label for = "date_purchased">Date Purchased:</label>
-                <input type = "date" name = "date_purchased" id = "date_purchased" required>
-
-                <label for = "physical_condition">Physical Condition:</label>
-                <select name = "physical_condition" id = "physical_condition" required>
-                    <option value = "">Select condition</option>
-                    <option value = "Excellent">Excellent</option>
-                    <option value = "Used">Used</option>
-                    <option value = "Poor">Poor</option>
-                    <option value = "Broken">Broken</option>
-                    <option value = "Defective">Defective</option>
-                </select>
-
-                <button type = "submit">Get Recommendation</button>
-            </form>
-
-            <p id = "guided-error" class = "error_message" aria-live = "polite"></p>
-        </section>
-        
-        <!-- 
-            AI was used to create this flex window of images,
-            used <section> to enhance readability. 
-            Copied from my work done in assignment 4.
-        -->
-        <section id = "device-images">
-            <div style = "display: flex; justify-content: center; gap: 20px;">
-                <figure>
-                    <a href = "https://www.apple.com/shop/trade-in">
-                    <img src = "images/iphone17_promax.png" alt = "Example smartphone for TechTrade" width = "200" height = "200">
-                    <figcaption><strong>Trade-in Apple</strong></figcaption>
-                </figure>
-                
-                <figure>
-                    <a href = "https://www.samsung.com/us/trade-in/">
-                        <img src = "images/s26_ultra.webp" alt = "Example laptop for TechTrade" width = "200" height = "200">
-                        <figcaption><strong>Trade-in Samsung</strong></figcaption>
+<body>
+    <div class = "main-header">
+        <header>
+            <h1>
+                <div class = "image-container">
+                    <a href = "site_home_txtsrc.html">
+                        <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo">
                     </a>
-                </figure>
-            </div>
-        </section>
-    </main>
+                </div>
 
-    <footer>
-        <p>Help us improve our website by providing your feedback!</p>
-        <nav>
-            <ul>
-                <li><a href = "site_home_txtsrc.html">Home</a></li>
-                <li><a href = "site_recommendation.html">Recommendations</a></li>
-                <li><a href = "https://github.com/LilLilCrab/csc271_projects/blob/main/product_site/documentation/costa_design.pdf">About Us</a></li>
-                <li><a href = "contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <p>&copy; 2026 TechTrade. All rights reserved.</p>
-    </footer>
+                <br>
+                TechTrade Guided Search
+
+                <a class = "button_link" href = "site_home_txtsrc.html" style = "color: #FFFFFF">Guided Search</a>
+            </h1>
+            <hr>
+        </header>
+    </div>
+
+    <div class = "main-content">
+        <main>
+            <section id = "guided-search">
+                <h2>Tell Us About Your Device</h2>
+                <p>Select one of our sample devices, then enter its condition and purchase date.</p>
+
+                <form id = "guided-search-form">
+                    <label for = "device_model">Device:</label>
+                    <select name = "device_model" id = "device_model" required>
+                        <option value = "">Select a device</option>
+                        <option value = "iPhone 15">iPhone 15</option>
+                        <option value = "Samsung Galaxy Watch 7">Samsung Galaxy Watch 7</option>
+                        <option value = "MacBook Pro 2021">MacBook Pro 2021</option>
+                        <option value = "Samsung Galaxy S9">Samsung Galaxy S9</option>
+                        <option value = "Google Pixel 11">Google Pixel 11</option>
+                        <option value = "Samsung Galaxy Book6 Pro">Samsung Galaxy Book6 Pro</option>
+                    </select>
+
+                    <label for = "date_purchased">Date Purchased:</label>
+                    <input type = "date" name = "date_purchased" id = "date_purchased" required>
+
+                    <label for = "physical_condition">Physical Condition:</label>
+                    <select name = "physical_condition" id = "physical_condition" required>
+                        <option value = "">Select condition</option>
+                        <option value = "Excellent">Excellent</option>
+                        <option value = "Used">Used</option>
+                        <option value = "Poor">Poor</option>
+                        <option value = "Broken">Broken</option>
+                        <option value = "Defective">Defective</option>
+                    </select>
+
+                    <button type = "submit">Get Recommendation</button>
+                </form>
+
+                <p id = "guided-error" class = "error_message" aria-live = "polite"></p>
+            </section>
+            
+            <!-- 
+                AI was used to create this flex window of images,
+                used <section> to enhance readability. 
+                Copied from my work done in assignment 4.
+            -->
+            <section id = "device-images">
+                <div style = "display: flex; justify-content: center; gap: 20px;">
+                    <div class = "image-container">
+                        <a href = "https://www.apple.com/shop/trade-in">
+                            <img src = "images/iphone17_promax.png" alt = "Example smartphone for TechTrade" width = "200" height = "200">
+                            <figcaption><strong>Trade-in Apple</strong></figcaption>
+                        </a>
+                    </div>
+                    
+                    <div class = "image-container">
+                        <a href = "https://www.samsung.com/us/trade-in/">
+                            <img src = "images/s26_ultra.webp" alt = "Example laptop for TechTrade" width = "200" height = "200">
+                            <figcaption><strong>Trade-in Samsung</strong></figcaption>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class = "footer">
+        <footer>
+            <p>Help us improve our website by providing your feedback!</p>
+            <nav>
+                <ul>
+                    <li><a href = "site_home_txtsrc.html">Home</a></li>
+                    <li><a href = "site_recommendation.html">Recommendations</a></li>
+                    <li><a href = "https://github.com/LilLilCrab/csc271_projects/blob/main/product_site/documentation/costa_design.pdf">About Us</a></li>
+                    <li><a href = "contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 TechTrade. All rights reserved.</p>
+        </footer>
+    </div>
 
      <!--
         AI was used in order to create this script that allows us to create classful elements to the device search fature.

@@ -8,8 +8,7 @@
     <link rel = "icon" type = "image/png" href = "images/TechTrade_logo_clear.png">
 </head>
 
-<body>
-    <!--
+ <!--
         Name: Benjii Costa
         Date: October 11, 2026
         Description: Hard-coded sample recommendation outcomes for TechTrade.
@@ -18,69 +17,77 @@
         costs are illustrative estimates, not quotes. All script and form
         submission error messages was assisted by AI.
     -->
+<body>
+    <div class = "main-header">
+        <header>
+                <h1>
+                    <div class = "image-container">
+                        <a href = "site_home_txtsrc.html">
+                            <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo">
+                        </a>
+                    </div>
+                    <br>
+                    TechTrade Recommendation
+                </h1>
+                <hr>
+        </header>
+    </div>
 
-    <header>
-        <h1>
-            <a href = "site_home_txtsrc.html">
-                <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo">
-            </a>
-            <br>
-            TechTrade Recommendation
-        </h1>
-        <hr>
-    </header>
+    <div class = "main-content">
+        <main>
+            <section id = "recommendation-results">
+                <h2 id = "recommendation-device">Your Device</h2>
+                <p id = "recommendation-intro">Based on the details provided, TechTrade recommends:</p>
+                <h2 id = "recommendation-action" class = "recommendation_action">Upgrade</h2>
 
-    <main>
-        <section id = "recommendation-results">
-            <h2 id = "recommendation-device">Your Device</h2>
-            <p id = "recommendation-intro">Based on the details provided, TechTrade recommends:</p>
-            <h2 id = "recommendation-action" class = "recommendation_action">Upgrade</h2>
+                <table>
+                    <caption>Device Information</caption>
+                    <tr><th>Factor</th><th>Details</th></tr>
+                    <tr><td>Condition</td><td id = "result-condition"></td></tr>
+                    <tr><td>Date Purchased</td><td id = "result-purchase-date"></td></tr>
+                    <tr><td>Device Age</td><td id = "result-age"></td></tr>
+                    <tr><td>Original MSRP</td><td id = "result-msrp"></td></tr>
+                    <tr><td>Manufacturing / Release Date</td><td id = "result-release"></td></tr>
+                    <tr><td>Estimated Support End</td><td id = "result-support"></td></tr>
+                    <tr><td>Estimated Repair Cost</td><td id = "result-repair"></td></tr>
+                </table>
 
-            <table>
-                <caption>Device Information</caption>
-                <tr><th>Factor</th><th>Details</th></tr>
-                <tr><td>Condition</td><td id = "result-condition"></td></tr>
-                <tr><td>Date Purchased</td><td id = "result-purchase-date"></td></tr>
-                <tr><td>Device Age</td><td id = "result-age"></td></tr>
-                <tr><td>Original MSRP</td><td id = "result-msrp"></td></tr>
-                <tr><td>Manufacturing / Release Date</td><td id = "result-release"></td></tr>
-                <tr><td>Estimated Support End</td><td id = "result-support"></td></tr>
-                <tr><td>Estimated Repair Cost</td><td id = "result-repair"></td></tr>
-            </table>
+                <p id = "recommendation-reason" class = "result_panel"></p>
+                <p class = "small_note">This is a classroom demonstration using hard-coded values and simplified support-life assumptions. Repair costs vary by part, location, warranty, and repair provider. It is not a formal quote.</p>
+                <p><a class = "button_link" href = "site_home.html" style = "color: #FFFFFF">Return Home</a>
+                <a class = "button_link" href = "site_home_ixt.html" style= "color: #FFFFFF";>Try Another Device</a></p>
+            </section>
 
-            <p id = "recommendation-reason" class = "result_panel"></p>
-            <p class = "small_note">This is a classroom demonstration using hard-coded values and simplified support-life assumptions. Repair costs vary by part, location, warranty, and repair provider. It is not a formal quote.</p>
-            <p><a class = "button_link" href = "site_home.html" style = "color: #FFFFFF">Return Home</a>
-            <a class = "button_link" href = "site_home_ixt.html" style= "color: #FFFFFF";>Try Another Device</a></p>
-        </section>
+            <section id = "sample-cases">
+                <h2>Try a Sample Case</h2>
+                <p>Choose one of the test cases to see the corresponding mock recommendation.</p>
+                <p>
+                    <a href = "site_recommendation.html?device=iPhone%2015&purchase_date=2024-10-11&condition=Poor">iPhone 15</a> |
+                    <a href = "site_recommendation.html?device=Samsung%20Galaxy%20Watch%207&purchase_date=2025-03-25&condition=Used">Galaxy Watch 7</a> |
+                    <a href = "site_recommendation.html?device=MacBook%20Pro%202021&purchase_date=2022-01-28&condition=Excellent">MacBook Pro 2021</a> |
+                    <a href = "site_recommendation.html?device=Samsung%20Galaxy%20S9&purchase_date=2018-06-16&condition=Used">Galaxy S9</a> |
+                    <a href = "site_recommendation.html?device=Google%20Pixel%2011&purchase_date=2026-09-02&condition=Defective">Pixel 11</a> |
+                    <a href = "site_recommendation.html?device=Samsung%20Galaxy%20Book6%20Pro&purchase_date=2025-12-07&condition=Broken">Galaxy Book6 Pro</a>
+                </p>
+            </section>
+        </main>
+    </div>
 
-        <section id = "sample-cases">
-            <h2>Try a Sample Case</h2>
-            <p>Choose one of the test cases to see the corresponding mock recommendation.</p>
-            <p>
-                <a href = "site_recommendation.html?device=iPhone%2015&purchase_date=2024-10-11&condition=Poor">iPhone 15</a> |
-                <a href = "site_recommendation.html?device=Samsung%20Galaxy%20Watch%207&purchase_date=2025-03-25&condition=Used">Galaxy Watch 7</a> |
-                <a href = "site_recommendation.html?device=MacBook%20Pro%202021&purchase_date=2022-01-28&condition=Excellent">MacBook Pro 2021</a> |
-                <a href = "site_recommendation.html?device=Samsung%20Galaxy%20S9&purchase_date=2018-06-16&condition=Used">Galaxy S9</a> |
-                <a href = "site_recommendation.html?device=Google%20Pixel%2011&purchase_date=2026-09-02&condition=Defective">Pixel 11</a> |
-                <a href = "site_recommendation.html?device=Samsung%20Galaxy%20Book6%20Pro&purchase_date=2025-12-07&condition=Broken">Galaxy Book6 Pro</a>
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <p>Help us improve our website by providing your feedback!</p>
-        <nav>
-            <ul>
-                <li><a href = "site_home_txtsrc.html">Home</a></li>
-                <li><a href = "site_home_ixt.html">Guided Search</a></li>
-                <li><a href = "site_recommendation.html">Recommendations</a></li>
-                <li><a href = "https://github.com/LilLilCrab/csc271_projects/blob/main/product_site/documentation/costa_design.pdf">About Us</a></li>
-                <li><a href = "contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <p>&copy; 2026 TechTrade. All rights reserved.</p>
-    </footer>
+    <div class = "footer">
+        <footer>
+            <p>Help us improve our website by providing your feedback!</p>
+            <nav>
+                <ul>
+                    <li><a href = "site_home_txtsrc.html">Home</a></li>
+                    <li><a href = "site_home_ixt.html">Guided Search</a></li>
+                    <li><a href = "site_recommendation.html">Recommendations</a></li>
+                    <li><a href = "https://github.com/LilLilCrab/csc271_projects/blob/main/product_site/documentation/costa_design.pdf">About Us</a></li>
+                    <li><a href = "contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 TechTrade. All rights reserved.</p>
+        </footer>
+    </div>
 
     <script>
         var search_parameters = new URLSearchParams(window.location.search);

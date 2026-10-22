@@ -21,6 +21,8 @@ body {
     align-items: center;
     gap: 50px;
     width: 100%;
+    background-color: #87b581;
+    border-radius: 35px;
 }
 
 .main-header h1 {

@@ -248,4 +248,11 @@ footer ul {
         box-sizing: border-box;
         font-size: 18px;
     }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    
 }

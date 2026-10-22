@@ -15,6 +15,10 @@ body {
     margin: 0;
 }
 
+h3 {
+    color: #234520;
+}
+
 .main-header header {
     display: flex;
     justify-content: center;

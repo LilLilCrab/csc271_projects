@@ -1,5 +1,9 @@
-Content:
-Design:
-Functionality:
-Accessibility:
-Action plan:
+Content: Did peers understand your site's purpose and audience? What content changes did they suggest?
+
+Design: What did they think of your layout, colors, typography, and organization?
+
+Functionality: What bugs, interactive issues, or performance problems did they identify?
+
+Accessibility: What improvements are needed for alt text, contrast, keyboard navigation, or usability?
+
+Action plan: What did they like most? Identify two specific improvements and explain how you’ll implement them.

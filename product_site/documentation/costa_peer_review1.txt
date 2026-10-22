@@ -12,3 +12,6 @@ I should improve the contrast between text and background colors, add a descript
 
 Action plan: What did they like most? Identify two specific improvements and explain how you’ll implement them.
 My peers liked the site's overall flow, detailed device information, interactive images, and final trade-in recommendation. I plan to clarify the site's purpose, refine the typography and wording, fix the mobile layout, improve accessibility, and correct the validation errors. 
+- Problem 1: Fix the mobile layout. I will use CSS media queries to resize the logo without distorting it and make the embedded YouTube video responsive so it fits smaller screens without causing horizontal scrolling.
+
+- Problem 2: Clarify the website's purpose. I will add a short paragraph text to the homepage that demonstrates that TechTrade helps users evaluate their current devices and decide whether trading them in for newer technology is worthwhile. This will make the site's purpose clearer to first-time visitors.

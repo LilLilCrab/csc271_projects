@@ -3,9 +3,26 @@
 <head>
     <meta charset = "UTF-8">
     <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-    <title>TechTrade Recommendation</title>
+    <meta name = "description" content = "TechTrade recommendation page with mock device recommendations based on user input.">
+    <meta name = "keywords" content = "TechTrade, tech trade-in, device recommendation, devices, trade-in, quote, sample devices, iPhone 15, Samsung Galaxy Watch 7, MacBook Pro 2021, Samsung Galaxy S9, Google Pixel 11, Samsung Galaxy Book6 Pro">
+    <meta name = "author" content = "Benjii Costa">
+    <meta name = "og:title" content = "TechTrade Recommendations">
+    <meta name = "og:description" content = "TechTrade recommendation page with mock device recommendations based on user input.">
+    <meta name = "og:image" content = "images/TechTrade_logo_clear.png">
+    <meta name = "og:url" content = "https://benjiicosta.rhody.dev/csc271_projects/product_site/techtrade_recommendation.html">
+    <title>TechTrade Recommendations</title>
     <link rel = "stylesheet" href = "css/techtrade.css">
     <link rel = "icon" type = "image/png" href = "images/TechTrade_logo_clear.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5YBTHGFHW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-S5YBTHGFHW');
+    </script>
 </head>
 
  <!--
@@ -21,14 +38,13 @@
     <div class = "main-header">
         <header>
             <div class = "image-container">
-                <a href = "site_home_txtsrc.html">
+                <a href = "techtrade_text_search.html">
                     <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo">
                 </a>
             </div>
                     
             <h1>TechTrade Recommendation</h1>
         </header>
-        <hr>
     </div>
 
     <div class = "main-content">
@@ -52,20 +68,20 @@
 
                 <p id = "recommendation-reason" class = "result_panel"></p>
                 <p class = "small_note">This is a classroom demonstration using hard-coded values and simplified support-life assumptions. Repair costs vary by part, location, warranty, and repair provider. It is not a formal quote.</p>
-                <p><a class = "button_link" href = "site_home_txtsrc.html" style = "color: #FFFFFF">Return Home</a>
-                <a class = "button_link" href = "site_home_ixt.html" style= "color: #FFFFFF";>Try Another Device</a></p>
+                <p><a class = "button_link" href = "techtrade_text_search.html" style = "color: #FFFFFF">Return Home</a>
+                <a class = "button_link" href = "techtrade_guided_search.html" style= "color: #FFFFFF";>Try Another Device</a></p>
             </section>
 
             <section id = "sample-cases">
                 <h2>Try a Sample Case</h2>
                 <p>Choose one of the test cases to see the corresponding mock recommendation.</p>
                 <p>
-                    <a href = "site_recommendation.html?device=iPhone%2015&purchase_date=2024-10-11&condition=Poor">iPhone 15</a> |
-                    <a href = "site_recommendation.html?device=Samsung%20Galaxy%20Watch%207&purchase_date=2025-03-25&condition=Used">Galaxy Watch 7</a> |
-                    <a href = "site_recommendation.html?device=MacBook%20Pro%202021&purchase_date=2022-01-28&condition=Excellent">MacBook Pro 2021</a> |
-                    <a href = "site_recommendation.html?device=Samsung%20Galaxy%20S9&purchase_date=2018-06-16&condition=Used">Galaxy S9</a> |
-                    <a href = "site_recommendation.html?device=Google%20Pixel%2011&purchase_date=2026-09-02&condition=Defective">Pixel 11</a> |
-                    <a href = "site_recommendation.html?device=Samsung%20Galaxy%20Book6%20Pro&purchase_date=2025-12-07&condition=Broken">Galaxy Book6 Pro</a>
+                    <a href = "techtrade_recommendation.html?device=iPhone%2015&purchase_date=2024-10-11&condition=Poor">iPhone 15</a> |
+                    <a href = "techtrade_recommendation.html?device=Samsung%20Galaxy%20Watch%207&purchase_date=2025-03-25&condition=Used">Galaxy Watch 7</a> |
+                    <a href = "techtrade_recommendation.html?device=MacBook%20Pro%202021&purchase_date=2022-01-28&condition=Excellent">MacBook Pro 2021</a> |
+                    <a href = "techtrade_recommendation.html?device=Samsung%20Galaxy%20S9&purchase_date=2018-06-16&condition=Used">Galaxy S9</a> |
+                    <a href = "techtrade_recommendation.html?device=Google%20Pixel%2011&purchase_date=2026-09-02&condition=Defective">Pixel 11</a> |
+                    <a href = "techtrade_recommendation.html?device=Samsung%20Galaxy%20Book6%20Pro&purchase_date=2025-12-07&condition=Broken">Galaxy Book6 Pro</a>
                 </p>
             </section>
         </main>
@@ -76,10 +92,11 @@
             <p>Help us improve our website by providing your feedback!</p>
             <nav>
                 <ul>
-                    <li><a href = "site_home_txtsrc.html">Home</a></li>
-                    <li><a href = "site_home_ixt.html">Guided Search</a></li>
-                    <li><a href = "site_recommendation.html">Recommendations</a></li>
+                    <li><a href = "techtrade_text_search.html">Home</a></li>
+                    <li><a href = "techtrade_guided_search.html">Guided Search</a></li>
+                    <li><a href = "techtrade_recommendation.html">Recommendations</a></li>
                     <li><a href = "https://github.com/LilLilCrab/csc271_projects/blob/main/product_site/documentation/costa_design.pdf">About Us</a></li>
+                    <li><a href = "mailto:bigbraingumbo@gmail.com">Contact Us</a></li>
                 </ul>
             </nav>
             <p>&copy; 2026 TechTrade. All rights reserved.</p>

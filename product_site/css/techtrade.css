@@ -44,6 +44,8 @@ hr {
 main {
     text-align: center;
     padding: 20px;
+    background-color: #87b581;
+    border-radius: 35px;
 }
 
 img {

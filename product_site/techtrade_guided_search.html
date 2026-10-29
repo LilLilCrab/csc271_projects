@@ -130,38 +130,6 @@
      <!--
         AI was used in order to create this script that allows us to create classful elements to the device search fature.
     -->
-    <script>
-        var search_parameters = new URLSearchParams(window.location.search);
-        var selected_device = search_parameters.get("device");
-
-        if (selected_device) {
-            var device_options = document.getElementById("device_model").options;
-
-            for (var i = 0; i < device_options.length; i++) {
-                if (device_options[i].value.toLowerCase() === selected_device.toLowerCase()) {
-                    document.getElementById("device_model").selectedIndex = i;
-                }
-            }
-        }
-
-        document.getElementById("guided-search-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            var device = document.getElementById("device_model").value;
-            var purchase_date = document.getElementById("date_purchased").value;
-            var condition = document.getElementById("physical_condition").value;
-
-            if (device === "Google Pixel 11" && condition !== "Defective") {
-                document.getElementById("guided-error").textContent =
-                    "For this sample case, select Defective to see the warranty replacement recommendation.";
-                return;
-            }
-
-            window.location.href = "techtrade_recommendation.html?device=" +
-                encodeURIComponent(device) +
-                "&purchase_date=" + encodeURIComponent(purchase_date) +
-                "&condition=" + encodeURIComponent(condition);
-        });
-    </script>
+        <script src="js/techtrade.js" defer></script>
 </body>
 </html>

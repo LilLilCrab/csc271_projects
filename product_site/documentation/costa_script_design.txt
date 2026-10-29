@@ -22,4 +22,7 @@ C. Task Breakdown
     - Recommendation page will display respective values per device entry
 
 D. Flowchart
+    Here is a link to my flowchart representing actions related to a
+    Pixel 11 device entry:
+    https://drive.google.com/file/d/1mZ-raNTYcP5-zzZlppexOmmpTnbrDGiH/view?usp=sharing
     

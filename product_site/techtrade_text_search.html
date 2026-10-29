@@ -113,27 +113,6 @@
         </footer>
     </div>
 
-    <script>
-        document.getElementById("quote-search").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            var device = document.getElementById("device").value.trim().toLowerCase();
-            var sample_devices = [
-                "iphone 15",
-                "samsung galaxy watch 7",
-                "macbook pro 2021",
-                "samsung galaxy s9",
-                "google pixel 11",
-                "samsung galaxy book6 pro"
-            ];
-
-            if (sample_devices.indexOf(device) === -1) {
-                document.getElementById("search-error").textContent =
-                    "Sorry, this demo only supports the six sample devices listed below.";
-            } else {
-                window.location.href = "techtrade_guided_search.html?device=" + encodeURIComponent(device);
-            }
-        });
-    </script>
+        <script src="js/techtrade.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <meta name = "description" content = "TechTrade home page with a mock device search and test cases listed.">
+    <meta name = "keywords" content = "TechTrade, tech trade-in, device search, mock devices, trade-in, quote, sample devices, iPhone 15, Samsung Galaxy Watch 7, MacBook Pro 2021, Samsung Galaxy S9, Google Pixel 11, Samsung Galaxy Book6 Pro">
+    <meta name = "author" content = "Benjii Costa">
+    <meta name = "og:title" content = "TechTrade Home">
+    <meta name = "og:description" content = "TechTrade home page with a mock device search and test cases listed.">
+    <meta name = "og:image" content = "images/TechTrade_logo_clear.png">
+    <meta name = "og:url" content = "https://benjiicosta.rhody.dev/csc271_projects/product_site/techtrade_text_search.html">
+    <title>TechTrade Home</title>
+    <link rel = "stylesheet" href = "css/techtrade.css">
+    <link rel = "icon" type = "image/png" href = "images/TechTrade_logo_clear.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5YBTHGFHW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-S5YBTHGFHW');
+    </script>
+</head>
+
+ <!--
+        Name: Benjii Costa
+        Date: October 11, 2026
+        Description: TechTrade home page with a mock device search.
+        AI-assisted suggestion: AI helped connect the text search to the
+        guided search page and add a message for unsupported device names.
+    -->
+<body>
+    <div class = "main-header">
+        <header>
+            <div class = "image-container">
+                <a href = "techtrade_text_search.html">
+                    <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo">
+                </a>
+            </div>
+            
+            <h1> Device Search </h1>
+        
+            <a class = "button_link" href = "techtrade_guided_search.html" style = "color: #FFFFFF">Guided Search</a>
+        </header>
+    </div>
+
+    <div class = "main-content">
+        <p class="animated-tagline">
+            We help you 
+            <span class="word-slider">
+                <span>Trade</span>
+                <span>Sell</span>
+                <span>Repair</span>
+                <span>Upgrade</span>
+            </span>
+            your technology 
+        </p>
+        <main>
+            <section id = "get-quote">
+                <h2>Get a quote for your tech needs!</h2>
+                <h3><strong>TechTrade</strong> helps you make the<br> <strong><em>right choices </em></strong> with your <strong><em>tech</em></strong></h3>
+            
+                <p>Enter one of our sample devices to continue to the guided search.</p>
+
+                <form id = "quote-search">
+                    <input
+                        type = "text"
+                        name = "device"
+                        id = "device"
+                        placeholder = "enter device to get started"
+                        required
+                    >
+                    <button type = "submit">Get My Quote</button>
+                </form>
+
+                <p id = "search-error" class = "error_message" aria-live = "polite"></p>
+                <p class = "small_note">Sample devices: iPhone 15, Samsung Galaxy Watch 7, MacBook Pro 2021, Samsung Galaxy S9, Google Pixel 11, Samsung Galaxy Book6 Pro.</p>
+                <br><br><br>
+            </section>
+
+            <section id = "bby-trade-in-video">
+                <div class = "video-container">
+                    <iframe
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/sfpZZOEg54c?si=bbTtkiaGjXbFfDqL"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class = "footer">
+        <footer>
+            <p>Help us improve our website by providing your feedback!</p>
+            <nav>
+                <ul>
+                    <li><a href = "techtrade_guided_search.html">Guided Search</a></li>
+                    <li><a href = "techtrade_recommendation.html">Recommendations</a></li>
+                    <li><a href = "https://github.com/LilLilCrab/csc271_projects/blob/main/product_site/documentation/costa_design.pdf">About Us</a></li>
+                    <li><a href = "mailto:bigbraingumbo@gmail.com">Contact Us</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 TechTrade. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("quote-search").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var device = document.getElementById("device").value.trim().toLowerCase();
+            var sample_devices = [
+                "iphone 15",
+                "samsung galaxy watch 7",
+                "macbook pro 2021",
+                "samsung galaxy s9",
+                "google pixel 11",
+                "samsung galaxy book6 pro"
+            ];
+
+            if (sample_devices.indexOf(device) === -1) {
+                document.getElementById("search-error").textContent =
+                    "Sorry, this demo only supports the six sample devices listed below.";
+            } else {
+                window.location.href = "techtrade_guided_search.html?device=" + encodeURIComponent(device);
+            }
+        });
+    </script>
+</body>
+</html>

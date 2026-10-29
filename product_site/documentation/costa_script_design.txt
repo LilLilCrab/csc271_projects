@@ -1,0 +1,25 @@
+A. Script Idea
+    I want my script to be able to allow users of TechTrade to be
+    able to simulate the product's functionality: entering a device
+    and getting a recommendation whether to UPGRADE, REPLACE, SELL
+    or TRADE their current technology. I will use hard-coded values
+    for device entry in order to simulate the action and disaply 
+    hard-coded recommendation information for each set device entry.
+
+B. Goals
+    The goals of this implementation is to enhance readability and
+    modularity collecting all of my current scripts embedded into my
+    HTML files, and categorize/organize them into their own files to
+    be referenced by each HTML doc. In addition, I plan on implementing
+    a few DOM features to increase functionality of the site.
+
+C. Task Breakdown
+    - Users will enter their device according to the list on the site 
+    - Users will enter the date of purchase
+    - Users will enter the condition of the device
+    - Users will submit their entry
+    - Search page will navigate to the recommendation page
+    - Recommendation page will display respective values per device entry
+
+D. Flowchart
+    

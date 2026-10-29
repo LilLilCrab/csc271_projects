@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <meta name = "description" content = "TechTrade guided search page with a mock device search test cases.">
+    <meta name = "keywords" content = "TechTrade, tech trade-in, device search, device, mock devices, trade-in, quote, sample devices, iPhone 15, Samsung Galaxy Watch 7, MacBook Pro 2021, Samsung Galaxy S9, Google Pixel 11, Samsung Galaxy Book6 Pro">
+    <meta name = "author" content = "Benjii Costa">
+    <meta name = "og:title" content = "TechTrade Guided Search">
+    <meta name = "og:description" content = "TechTrade guided search page with device search test cases.">
+    <meta name = "og:image" content = "images/TechTrade_logo_clear.png">
+    <meta name = "og:url" content = "https://benjiicosta.rhody.dev/csc271_projects/product_site/techtrade_guided_search.html">
+    <title>TechTrade Guided Search</title>
+    <link rel = "stylesheet" href = "css/techtrade.css">
+    <link rel = "icon" type = "image/png" href = "images/TechTrade_logo_clear.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5YBTHGFHW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-S5YBTHGFHW');
+    </script>
+</head>
+
+<!--
+        Name: Benjii Costa
+        Date: October 11, 2026
+        Description: Guided search page for the six TechTrade sample devices.
+        AI-assisted suggestion: AI helped connect the selected device and form
+        details to the hard-coded recommendation examples. Also used with error
+        messaging and site scripts.
+    -->
+<body>
+    <div class = "main-header">
+        <header>
+            <div class = "image-container">
+                <a href = "techtrade_text_search.html">
+                    <img src = "images/TechTrade_logo_clear.png" alt = "TechTrade Logo">
+                </a>
+            </div>
+
+            <h1> Guided Search </h1>
+
+            <a class = "button_link" href = "techtrade_text_search.html" style = "color: #FFFFFF">Text Search</a>
+        </header>
+    </div>
+
+    <div class = "main-content">
+        <main>
+            <section id = "guided-search">
+                <h2>Tell Us About Your Device</h2>
+                <p>Select one of our sample devices, then enter its condition and purchase date.</p>
+
+                <form id = "guided-search-form">
+                    <label for = "device_model">Device:</label>
+                    <select name = "device_model" id = "device_model" required>
+                        <option value = "">Select a device</option>
+                        <option value = "iPhone 15">iPhone 15</option>
+                        <option value = "Samsung Galaxy Watch 7">Samsung Galaxy Watch 7</option>
+                        <option value = "MacBook Pro 2021">MacBook Pro 2021</option>
+                        <option value = "Samsung Galaxy S9">Samsung Galaxy S9</option>
+                        <option value = "Google Pixel 11">Google Pixel 11</option>
+                        <option value = "Samsung Galaxy Book6 Pro">Samsung Galaxy Book6 Pro</option>
+                    </select>
+
+                    <label for = "date_purchased">Date Purchased:</label>
+                    <input type = "date" name = "date_purchased" id = "date_purchased" required>
+
+                    <label for = "physical_condition">Physical Condition:</label>
+                    <select name = "physical_condition" id = "physical_condition" required>
+                        <option value = "">Select condition</option>
+                        <option value = "Excellent">Excellent</option>
+                        <option value = "Used">Used</option>
+                        <option value = "Poor">Poor</option>
+                        <option value = "Broken">Broken</option>
+                        <option value = "Defective">Defective</option>
+                    </select>
+
+                    <button type = "submit">Get Recommendation</button>
+                </form>
+
+                <p id = "guided-error" class = "error_message" aria-live = "polite"></p>
+            </section>
+
+            <p class = "small_note">Sample devices: iPhone 15 (Poor), Samsung Galaxy Watch 7 (Used), MacBook Pro 2021 (Excellent), Samsung Galaxy S9 (Used), Google Pixel 11 (Defective), Samsung Galaxy Book6 Pro (Broken)</p>
+            
+            <!-- 
+                AI was used to create this flex window of images,
+                used <section> to enhance readability. 
+                Copied from my work done in assignment 4.
+            -->
+            <section id = "device-images">
+                <div style = "display: flex; justify-content: center; gap: 20px;">
+                    <div class = "image-container">
+                        <a href = "https://www.apple.com/shop/trade-in">
+                            <img src = "images/iphone17_promax.png" alt = "Example smartphone for TechTrade" width = "200" height = "200">
+                            <figcaption><strong>Trade-in Apple</strong></figcaption>
+                        </a>
+                    </div>
+                    
+                    <div class = "image-container">
+                        <a href = "https://www.samsung.com/us/trade-in/">
+                            <img src = "images/s26_ultra.webp" alt = "Example laptop for TechTrade" width = "200" height = "200">
+                            <figcaption><strong>Trade-in Samsung</strong></figcaption>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class = "footer">
+        <footer>
+            <p>Help us improve our website by providing your feedback!</p>
+            <nav>
+                <ul>
+                    <li><a href = "techtrade_text_search.html">Home</a></li>
+                    <li><a href = "techtrade_recommendation.html">Recommendations</a></li>
+                    <li><a href = "https://github.com/LilLilCrab/csc271_projects/blob/main/product_site/documentation/costa_design.pdf">About Us</a></li>
+                    <li><a href = "mailto:bigbraingumbo@gmail.com">Contact Us</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 TechTrade. All rights reserved.</p>
+        </footer>
+    </div>
+
+     <!--
+        AI was used in order to create this script that allows us to create classful elements to the device search fature.
+    -->
+    <script>
+        var search_parameters = new URLSearchParams(window.location.search);
+        var selected_device = search_parameters.get("device");
+
+        if (selected_device) {
+            var device_options = document.getElementById("device_model").options;
+
+            for (var i = 0; i < device_options.length; i++) {
+                if (device_options[i].value.toLowerCase() === selected_device.toLowerCase()) {
+                    document.getElementById("device_model").selectedIndex = i;
+                }
+            }
+        }
+
+        document.getElementById("guided-search-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var device = document.getElementById("device_model").value;
+            var purchase_date = document.getElementById("date_purchased").value;
+            var condition = document.getElementById("physical_condition").value;
+
+            if (device === "Google Pixel 11" && condition !== "Defective") {
+                document.getElementById("guided-error").textContent =
+                    "For this sample case, select Defective to see the warranty replacement recommendation.";
+                return;
+            }
+
+            window.location.href = "techtrade_recommendation.html?device=" +
+                encodeURIComponent(device) +
+                "&purchase_date=" + encodeURIComponent(purchase_date) +
+                "&condition=" + encodeURIComponent(condition);
+        });
+    </script>
+</body>
+</html>

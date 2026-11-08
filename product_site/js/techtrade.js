@@ -1,17 +1,31 @@
 /*
     Name: Benjii Costa
-    Date: October 29, 2026
-    Description: Shared JavaScript for TechTrade pages.
-    AI-assisted suggestion: AI helped move the existing page scripts into this
-    external file and organize DOM selection and content updates.
+    Date: November 8, 2026
+    Description: Shared JavaScript for TechTrade pages, including the
+    recommendation decision tree, dynamic lists, and NodeList manipulation.
+    AI-assisted suggestion: AI helped organize the decision-tree conditions,
+    dynamic list generation, and NodeList loop. See documentation/costa_ai_documentation.md.
 */
 
 // Required DOM selection methods; these target existing page elements.
 var pageTitle = document.getElementById("recommendation-device");
-var smallNotes = document.getElementsByClassName("small_note");
+var smallNotes = document.querySelectorAll(".small_note");
 var footerElements = document.getElementsByTagName("footer");
 var pageMain = document.querySelector("main");
 var pageLinks = document.querySelectorAll("footer nav a");
+
+// Assignment 9: Loop through the NodeList of sample-note paragraphs.
+// The length check prevents the loop from running when a page has no matching notes.
+// The title provides a brief tooltip when a visitor hovers over each note.
+if (smallNotes.length > 0) {
+    for (var noteIndex = 0; noteIndex < smallNotes.length; noteIndex++) {
+        smallNotes[noteIndex].setAttribute(
+            "title",
+            "Additional information about this TechTrade demonstration."
+        );
+    }
+}
+
 
 // Use string and numeric data, arithmetic, and textContent to update the footer.
 var siteName = "TechTrade";
@@ -127,6 +141,36 @@ var search_parameters = new URLSearchParams(window.location.search);
             selected_data = device_data[device];
         }
 
+
+        // Assignment 9: TechTrade recommendation decision tree.
+        // Each named variable evaluates to a Boolean (true or false).
+        var isWarrantyCase =
+            device === "Google Pixel 11" && condition === "Defective";
+
+        var isRepairCandidate =
+            device === "Samsung Galaxy Book6 Pro" && condition === "Broken";
+
+        var isUpgradeCandidate =
+            device === "Samsung Galaxy S9" ||
+            (device === "iPhone 15" && condition === "Poor");
+
+        // Follow the decision tree in order. The final else preserves the
+        // existing device-specific recommendation for all other sample cases.
+        var recommendationAction;
+
+        if (isWarrantyCase) {
+            recommendationAction = "Trade-in";
+        } else if (isRepairCandidate) {
+            recommendationAction = "Repair";
+        } else if (isUpgradeCandidate) {
+            recommendationAction = "Upgrade";
+        } else {
+            recommendationAction = selected_data.action;
+        }
+
+        // Use the decision-tree result throughout the recommendation page.
+        selected_data.action = recommendationAction;
+
         document.getElementById("recommendation-device").textContent = device;
         document.getElementById("recommendation-action").textContent = selected_data.action;
         document.getElementById("result-condition").textContent = condition;
@@ -159,6 +203,72 @@ var search_parameters = new URLSearchParams(window.location.search);
         document.getElementById("result-support").textContent = selected_data.support;
         document.getElementById("result-repair").textContent = selected_data.repair;
         document.getElementById("recommendation-reason").textContent = selected_data.reason;
+
+    // Assignment 9: Use a for loop to create recommendation considerations.
+    // A for loop is useful here because the array has a known number of items.
+    var recommendationConsiderations = [
+        "Compare the estimated repair cost with the cost of replacing the device.",
+        "Check the device's remaining software-support period.",
+        "Review warranty coverage and trade-in eligibility before spending money."
+    ];
+
+    var considerationsList = document.getElementById("recommendation-considerations");
+
+    if (considerationsList) {
+        for (var considerationIndex = 0;
+             considerationIndex < recommendationConsiderations.length;
+             considerationIndex++) {
+            var considerationItem = document.createElement("li");
+            considerationItem.textContent =
+                recommendationConsiderations[considerationIndex];
+            considerationsList.appendChild(considerationItem);
+        }
+    }
+
+    // Choose next steps based on the decision-tree outcome.
+    var recommendationSteps;
+
+    if (recommendationAction === "Trade-in") {
+        recommendationSteps = [
+            "Confirm whether the defect is covered by the manufacturer's warranty.",
+            "Back up personal data before sending the device for service.",
+            "Contact the seller or manufacturer to request warranty assistance."
+        ];
+    } else if (recommendationAction === "Repair") {
+        recommendationSteps = [
+            "Request a diagnosis to confirm the cause of the problem.",
+            "Compare the repair estimate with the device's replacement cost.",
+            "Back up important data before handing over the device."
+        ];
+    } else if (recommendationAction === "Upgrade") {
+        recommendationSteps = [
+            "Compare current devices that meet your needs and budget.",
+            "Check available trade-in offers for your current device.",
+            "Back up and transfer your data before upgrading."
+        ];
+    } else {
+        recommendationSteps = [
+            "Review the device's current resale value.",
+            "Compare selling privately with available trade-in offers.",
+            "Remove personal data before transferring ownership."
+        ];
+    }
+
+    // Assignment 9: Use a while loop to add each suggested next step.
+    // A while loop works well because the list is processed until its index
+    // reaches the number of steps in the selected recommendation array.
+    var stepIndex = 0;
+    var nextStepsList = document.getElementById("recommendation-next-steps");
+
+    if (nextStepsList) {
+        while (stepIndex < recommendationSteps.length) {
+            var stepItem = document.createElement("li");
+            stepItem.textContent = recommendationSteps[stepIndex];
+            nextStepsList.appendChild(stepItem);
+            stepIndex++;
+        }
+    }
+
     // Update visible text and HTML markup using a stored string variable.
     var recommendationIntro = document.getElementById("recommendation-intro");
     var introLabel = "TechTrade recommends:";

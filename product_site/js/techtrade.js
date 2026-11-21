@@ -17,6 +17,43 @@
 // ------------------------------------------------------------
 
 /*
+    addFieldValidation(field)
+    Purpose: Displays guidance when a form field gains focus and checks
+    whether it is empty when the field loses focus.
+    Parameters:
+        field - The input or select DOM element to validate.
+    Returns: Nothing.
+*/
+function addFieldValidation(field) {
+    if (!field) {
+        return;
+    }
+
+    // Create a feedback element immediately after the field.
+    var feedback = document.createElement("small");
+    feedback.style.display = "block";
+    feedback.style.color = "red";
+    feedback.setAttribute("aria-live", "polite");
+    field.insertAdjacentElement("afterend", feedback);
+
+    // Focus event: Tell users that the field cannot be left blank.
+    field.addEventListener("focus", function() {
+        feedback.textContent = "This field cannot be blank.";
+    });
+
+    // Blur event: Check whether the user entered or selected a value.
+    field.addEventListener("blur", function() {
+        if (field.value.trim() === "") {
+            field.style.outline = "2px solid red";
+            feedback.textContent = "Error: Please complete this field.";
+        } else {
+            field.style.outline = "";
+            feedback.textContent = "";
+        }
+    });
+}
+
+/*
     initializeSharedPage()
     Purpose: Adds tooltips to sample notes, updates the footer copyright year,
     and records the number of footer navigation links on the main element.
@@ -203,6 +240,11 @@ function initializeGuidedSearch() {
         return;
     }
 
+    // Add focus and blur validation to each guided-search field.
+    addFieldValidation(document.getElementById("device_model"));
+    addFieldValidation(document.getElementById("date_purchased"));
+    addFieldValidation(document.getElementById("physical_condition"));
+
     var searchParameters = new URLSearchParams(window.location.search);
     var selectedDevice = searchParameters.get("device");
 
@@ -381,6 +423,9 @@ function initializeTextSearch() {
     if (!quoteForm) {
         return;
     }
+
+    // Add focus and blur validation to the text-search input.
+    addFieldValidation(document.getElementById("device"));
 
     quoteForm.addEventListener("submit", function(event) {
         event.preventDefault();
